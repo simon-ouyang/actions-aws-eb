@@ -1,6 +1,6 @@
 FROM python:3
 
-ARG command="--version"
+ARG command="eb --version"
 
 COPY entrypoint.sh /entrypoint.sh
 
