@@ -1,5 +1,3 @@
 #!/bin/sh -l
 
-command="$1"
-
-$command
+eb use $1 && eb setenv $2

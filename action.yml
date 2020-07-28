@@ -1,22 +1,27 @@
 # action.yml
-name: 'AWS Elastic Beanstalk cli for multiple commands'
+name: 'AWS Elastic Beanstalk Cli for setting environment variables'
 
 author: Simon Ouyang
 
-description: 'Provide eb cli commands that support multiple commands'
+description: 'AWS Elastic Beanstalk Cli for setting environment variable'
 
 branding:
   icon: 'terminal'  
   color: 'white'
   
 inputs:
-  command:  # input example: eb use test && eb setenv foo=bar
-    description: '<command>'
+  application_environment:  #
+    description: '<application_environment>'
     required: true
-    default: 'eb --version'
+    default: 'my_environment'
+  environment_variable:  # input example: foo=bar
+    description: '<environment_variable>'
+    required: true
+    default: 'foo=bar' 
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.command }}
+    - ${{ inputs.application_environment }}
+    - ${{ inputs.environment_variable }}
