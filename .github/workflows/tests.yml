@@ -3,7 +3,6 @@ on:
   push:
     paths-ignore:
       - '*.md'
-      - .github/FUNDING.yml
       - LICENCE
 
 jobs:
@@ -33,4 +32,4 @@ jobs:
       - name: See version
         uses: ./
         with:
-          command: '--version'
+          command: 'eb --version'

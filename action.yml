@@ -10,18 +10,13 @@ branding:
   color: 'white'
   
 inputs:
-  application_environment:  #
-    description: '<application_environment>'
+  command:  #
+    description: '<command>'
     required: true
-    default: 'my_environment'
-  environment_variable:  # input example: foo=bar
-    description: '<environment_variable>'
-    required: true
-    default: 'foo=bar' 
+    default: 'eb --version'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.application_environment }}
-    - ${{ inputs.environment_variable }}
+    - ${{ inputs.command }}
