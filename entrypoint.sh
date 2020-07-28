@@ -1,5 +1,3 @@
 #!/bin/sh -l
 
-command="eb use $1 && eb setenv $2"
-
-$command
+sh -c "eb use $application_environment && eb setenv $environment_variable"

@@ -1,6 +1,7 @@
 FROM python:3
 
-ARG command="eb --version"
+ARG application_environment="my environment" 
+ARG environment_variable="foo=bar"
 
 COPY entrypoint.sh /entrypoint.sh
 
