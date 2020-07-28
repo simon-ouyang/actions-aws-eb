@@ -1,19 +1,19 @@
 # action.yml
-name: 'AWS Elastic Beanstalk cli'
+name: 'AWS Elastic Beanstalk cli for multiple commands'
 
-author: Habid Manzur
+author: Simon Ouyang
 
-description: 'Provide eb cli commands'
+description: 'Provide eb cli commands that support multiple commands'
 
 branding:
   icon: 'terminal'  
   color: 'white'
   
 inputs:
-  command:  # id of input
-    description: 'eb <command>'
+  command:  # input example: eb use test && eb setenv foo=bar
+    description: '<command>'
     required: true
-    default: 'deploy'
+    default: 'eb --version'
 
 runs:
   using: 'docker'
